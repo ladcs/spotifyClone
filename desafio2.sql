@@ -1,0 +1,8 @@
+CREATE VIEW estatisticas_musicais AS
+SELECT
+COUNT(DISTINCT SO.SONG_ID) AS 'cancoes',
+COUNT(DISTINCT A.SINGER_ID) AS 'artistas',
+COUNT(DISTINCT A.ALBUM_ID) AS 'albuns'
+FROM
+SpotifyClone.ALBUMS A,
+SpotifyClone.SONGS SO;

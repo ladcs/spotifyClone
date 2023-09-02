@@ -1,0 +1,13 @@
+CREATE VIEW perfil_artistas AS
+SELECT
+S.SINGER AS `artista`,
+A.ALBUM AS `album`,
+COUNT(F.SINGER_ID) AS `seguidores`
+FROM
+SpotifyClone.FOLLOW AS F
+INNER JOIN
+SpotifyClone.SINGERS AS S ON F.SINGER_ID = S.SINGER_ID
+INNER JOIN
+SpotifyClone.ALBUMS AS A ON A.SINGER_ID = S.SINGER_ID
+GROUP BY A.ALBUM, S.SINGER
+ORDER BY `seguidores` DESC, `artista`, `album`;

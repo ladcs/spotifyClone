@@ -1,0 +1,11 @@
+CREATE VIEW top_3_artistas AS
+SELECT
+S.SINGER AS `artista`,
+COUNT(F.SINGER_ID) AS `seguidores`
+FROM
+SpotifyClone.FOLLOW AS F
+INNER JOIN
+SpotifyClone.SINGERS AS S ON F.SINGER_ID = S.SINGER_ID
+GROUP BY F.SINGER_ID
+ORDER BY `seguidores` DESC, `artista`
+LIMIT 3;
