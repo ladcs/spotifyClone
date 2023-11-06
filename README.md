@@ -1,4 +1,4 @@
-# Como foi desenvolver
+# Como foi desenvolvido
 
 ## Desafio 1
 * Cria um banco com o nome de **`SpotifyClone`**.
